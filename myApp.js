@@ -1,9 +1,8 @@
 const express = require('express');
 const helmet = require('helmet');
 const app = express();
-
 app.use(helmet.hidePoweredBy());
-
+app.disable("x-powered-by");
 
 
 
@@ -57,5 +56,5 @@ app.get("/", function (request, response) {
 });
 let port = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`helmet ${PORT}`);
+  console.log(`Helmet ${PORT}`);
 });
