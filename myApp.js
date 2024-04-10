@@ -2,6 +2,8 @@ const express = require('express');
 const helmet = require('helmet');
 const app = express();
 
+app.use(helmet.PoweredBy());
+
 
 
 
@@ -55,6 +57,6 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 let port = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Helmet ${PORT}`);
+app.listen(port, () => {
+  console.log(`app listening ${port}`);
 });
